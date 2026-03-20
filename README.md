@@ -1,167 +1,182 @@
-# QA Python Tasks - Selenium Exercises
+# 🧪 Python QA Lab — Selenium WebDriver Exercises
 
-Este proyecto contiene una serie de ejercicios de automatización de pruebas web utilizando Selenium WebDriver en Python. Los ejercicios están diseñados para aprender y practicar diferentes técnicas de localización de elementos, interacción con formularios y validaciones en el sitio web Around.
+![Python](https://img.shields.io/badge/Python-3.7+-blue?logo=python&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-WebDriver-green?logo=selenium&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+![Focus](https://img.shields.io/badge/Focus-QA%20Automation-orange)
 
-## Requisitos Previos
+---
 
-- Python 3.7+
-- Selenium WebDriver
-- Chrome Browser
-- ChromeDriver
+## 🇬🇧 English
 
-## Instalación
+A hands-on collection of browser automation exercises built with **Python and Selenium WebDriver**, developed as part of a QA Engineer training program. Each script demonstrates a specific testing technique — from basic navigation to complete CRUD validation flows.
+
+> 👨‍💻 Built by **Eduardo Alcalá** | Industrial Engineer transitioning into QA Automation  
+> 🔗 [LinkedIn](https://www.linkedin.com/in/TU_PERFIL) · [Portfolio](https://github.com/alcalaeduardo-qa)
+
+---
+
+### 🛠️ Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| Python 3.7+ | Core language |
+| Selenium WebDriver | Browser automation |
+| ChromeDriver | Chrome browser control |
+| PyCharm | IDE |
+
+---
+
+### 📂 Exercise Overview
+
+#### 🔰 Basic Exercises
+
+| File | Technique | Description |
+|------|-----------|-------------|
+| `open_and_close_page.py` | Driver setup | Navigate to a URL and close the browser |
+| `connect_selenium_in_pycharm.py` | Configuration | Verify Selenium installation |
+| `find_element_exercise_1.py` | `By.CSS_SELECTOR` | Locate element by CSS class and read its text |
+| `find_element_exercise_2.py` | `By.XPATH` + `find_elements()` | Find multiple elements and assert count |
+| `find_element_exercise_3.py` | `By.ID` + `get_attribute()` | Validate placeholder attributes on form fields |
+
+#### ⚙️ Interaction Exercises
+
+| File | Technique | Description |
+|------|-----------|-------------|
+| `click_on_an_element.py` | `click()` + `By.XPATH` | Find and click a button |
+| `filling_in_the_input_field.py` | `send_keys()` + `WebDriverWait` | Fill login form with explicit wait |
+| `get_text.py` | `.text` + visibility wait | Login and validate button text |
+| `go_to_element.py` | `execute_script()` + `scrollIntoView` | Scroll to footer and validate |
+
+#### 🚀 Advanced Practice Exercises
+
+| File | Technique | Description |
+|------|-----------|-------------|
+| `practice_exercise_1.py` | Attribute wait + CSS validation | Login, update profile photo, verify change |
+| `practice_exercise_2.py` | Random data + CRUD + state restore | Add a post with random name and delete it |
+| `practice_exercise_3.py` | CSS selector + scroll | Scroll first feed card into view |
+
+---
+
+### ✅ QA Best Practices Applied
+
+- **Explicit waits** with `WebDriverWait` + `expected_conditions` — no hardcoded `sleep()`
+- **Assertions** with descriptive messages for clear failure reporting
+- **`driver.quit()`** in every script to ensure proper browser cleanup
+- **Robust selectors** — CSS, XPath, and ID chosen by reliability per context
+- **State restoration** — tests leave the app in its original state (practice_exercise_2)
+- **Separation of concerns** — each file tests one specific behavior
+
+---
+
+### 🧠 Selenium Techniques Covered
+
+```
+Element Location:    By.ID · By.CLASS_NAME · By.CSS_SELECTOR · By.XPATH · By.TAG_NAME
+Actions:             click() · send_keys() · execute_script()
+Assertions:          assert · len() · in operator · get_attribute()
+Waits:               implicitly_wait() · WebDriverWait · expected_conditions
+Scroll:              scrollIntoView() via JavaScript
+```
+
+---
+
+### ▶️ How to Run
 
 ```bash
+# Install dependencies
 pip install selenium
+
+# Run any exercise
+python find_element_exercise_1.py
 ```
 
-## Descripción de Archivos
+> ⚠️ Requires Chrome browser and a compatible ChromeDriver version installed.
 
-### Ejercicios Básicos
+---
 
-#### `open_and_close_page.py`
-- **Descripción**: Ejercicio básico para abrir y cerrar una página web
-- **Funcionalidad**: Inicia Chrome, navega a una URL y cierra el navegador
-- **Conceptos aprendidos**: Configuración básica de Selenium, navegación web
+---
 
-#### `connect_selenium_in_pycharm.py`
-- **Descripción**: Archivo de configuración para conectar Selenium en PyCharm
-- **Funcionalidad**: Verifica la instalación y configuración de Selenium
+## 🇲🇽 Español
 
-#### `find_element_exercise_1.py`
-- **Descripción**: Búsqueda de un elemento mediante selector CSS
-- **Funcionalidad**: Encuentra el título "Iniciar sesión" usando la clase `.auth-form__title`
-- **Técnicas**: `find_element()`, `By.CSS_SELECTOR`, obtención de texto
+Colección de ejercicios de automatización de navegador con **Python y Selenium WebDriver**, desarrollados como parte de un programa de formación como QA Engineer. Cada script demuestra una técnica específica de testing, desde navegación básica hasta flujos de validación CRUD completos.
 
-#### `find_element_exercise_2.py`
-- **Descripción**: Búsqueda de múltiples elementos mediante XPath
-- **Funcionalidad**: Encuentra todos los elementos `<img>` y verifica que haya más de uno
-- **Técnicas**: `find_elements()`, `By.XPATH`, `assert`, `len()`
+> 👨‍💻 Desarrollado por **Eduardo Alcalá** | Ingeniero Industrial en transición a QA Automation  
+> 🔗 [LinkedIn](https://www.linkedin.com/in/TU_PERFIL) · [Portafolio](https://github.com/alcalaeduardo-qa)
 
-#### `find_element_exercise_3.py`
-- **Descripción**: Validación de atributos de elementos
-- **Funcionalidad**: Verifica los placeholders de los campos email y password
-- **Técnicas**: `By.ID`, `get_attribute()`, validaciones con `assert`
+---
 
-### Ejercicios de Interacción
+### 📂 Descripción de Ejercicios
 
-#### `сlick_on_an_element.py`
-- **Descripción**: Ejercicio de hacer clic en elementos
-- **Funcionalidad**: Busca y hace clic en el botón "Iniciar sesión" mediante XPath
-- **Técnicas**: `click()`, `By.XPATH`, búsqueda por clase y ruta relativa
+#### 🔰 Ejercicios Básicos
 
-#### `filling_in_the_input_field.py`
-- **Descripción**: Llenado de formularios y espera explícita
-- **Funcionalidad**: Completa el formulario de inicio de sesión y espera a que cargue la página principal
-- **Técnicas**: `send_keys()`, `WebDriverWait`, `expected_conditions`, verificación de URL
+| Archivo | Técnica | Descripción |
+|---------|---------|-------------|
+| `open_and_close_page.py` | Configuración del driver | Navegar a URL y cerrar el navegador |
+| `connect_selenium_in_pycharm.py` | Configuración | Verificar instalación de Selenium |
+| `find_element_exercise_1.py` | `By.CSS_SELECTOR` | Localizar elemento por clase CSS y leer su texto |
+| `find_element_exercise_2.py` | `By.XPATH` + `find_elements()` | Encontrar múltiples elementos y validar cantidad |
+| `find_element_exercise_3.py` | `By.ID` + `get_attribute()` | Validar atributos placeholder en campos de formulario |
 
-#### `get_text.py`
-- **Descripción**: Obtención y validación de texto de elementos
-- **Funcionalidad**: Inicia sesión y verifica que el botón "Cerrar sesión" contenga el texto correcto
-- **Técnicas**: `text`, validaciones de texto, espera de visibilidad
+#### ⚙️ Ejercicios de Interacción
 
-#### `go_to_element.py`
-- **Descripción**: Desplazamiento a elementos específicos
-- **Funcionalidad**: Inicia sesión, busca el footer y lo desplaza a la vista
-- **Técnicas**: `scrollIntoView()`, `execute_script()`, validación con operador `in`
+| Archivo | Técnica | Descripción |
+|---------|---------|-------------|
+| `click_on_an_element.py` | `click()` + `By.XPATH` | Encontrar y hacer clic en un botón |
+| `filling_in_the_input_field.py` | `send_keys()` + `WebDriverWait` | Llenar formulario de login con espera explícita |
+| `get_text.py` | `.text` + espera de visibilidad | Login y validación de texto de botón |
+| `go_to_element.py` | `execute_script()` + `scrollIntoView` | Desplazarse al footer y validar |
 
-### Ejercicios Prácticos Avanzados
+#### 🚀 Ejercicios Prácticos Avanzados
 
-#### `practice_exercise_1.py`
-- **Descripción**: Cambio de foto de perfil
-- **Funcionalidad**: Inicia sesión, accede al perfil, cambia la foto y verifica el cambio
-- **Técnicas**: Manipulación de formularios, espera de atributos, validación de estilo CSS
-- **URL de foto**: https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/qa-sprint-7/avatarSelenium.png
+| Archivo | Técnica | Descripción |
+|---------|---------|-------------|
+| `practice_exercise_1.py` | Espera de atributos + validación CSS | Login, cambio de foto de perfil y verificación |
+| `practice_exercise_2.py` | Datos aleatorios + CRUD + restauración | Agregar publicación con nombre aleatorio y eliminarla |
+| `practice_exercise_3.py` | Selector CSS + scroll | Desplazar primera tarjeta del feed a la vista |
 
-#### `practice_exercise_2.py`
-- **Descripción**: Gestión completa de contenido (CRUD)
-- **Funcionalidad**: Agrega una nueva publicación con nombre aleatorio y luego la elimina
-- **Técnicas**: Generación aleatoria, validación de estado, restauración del estado inicial
-- **Características**: 
-  - Genera nombres como "Tokio###" con números aleatorios
-  - Verifica creación y eliminación
-  - Mantiene el estado original del sitio
+---
 
-#### `practice_exercise_3.py`
-- **Descripción**: Desplazamiento de elementos
-- **Funcionalidad**: Inicia sesión y desplaza la primera tarjeta del feed a la vista
-- **Técnicas**: `scrollIntoView()`, selectores CSS, espera de carga de contenido
+### ✅ Buenas Prácticas de QA Implementadas
 
-## Estructura del Proyecto
+- **Esperas explícitas** con `WebDriverWait` — sin `sleep()` hardcodeado
+- **Aserciones** con mensajes descriptivos para reportes de fallo claros
+- **`driver.quit()`** en cada script para cierre correcto del navegador
+- **Selectores robustos** — CSS, XPath e ID elegidos por fiabilidad según contexto
+- **Restauración de estado** — los tests dejan la app en su estado original
+- **Separación de responsabilidades** — cada archivo prueba un comportamiento específico
 
-```
-qa_python_tasks-es/
-├── README.md                           # Documentación del proyecto
-├── open_and_close_page.py              # Ejercicio básico de navegación
-├── connect_selenium_in_pycharm.py      # Configuración de Selenium
-├── find_element_exercise_1.py          # Búsqueda por CSS
-├── find_element_exercise_2.py          # Búsqueda múltiple por XPath
-├── find_element_exercise_3.py          # Validación de atributos
-├── сlick_on_an_element.py              # Ejercicio de clic
-├── filling_in_the_input_field.py       # Llenado de formularios
-├── get_text.py                         # Obtención de texto
-├── go_to_element.py                    # Desplazamiento a elementos
-├── practice_exercise_1.py              # Cambio de foto de perfil
-├── practice_exercise_2.py              # Gestión de contenido
-└── practice_exercise_3.py              # Desplazamiento de tarjetas
-```
+---
 
-## Sitio Web de Pruebas
-
-- **URL**: https://around-v1.nm.tripleten-services.com/signin?lng=es
-- **Credenciales de prueba**:
-  - Email: coqwerty1@mail.com
-  - Password: 12345678
-
-## Conceptos Aprendidos
-
-### Localización de Elementos
-- `By.ID`: Búsqueda por identificador único
-- `By.CLASS_NAME`: Búsqueda por nombre de clase
-- `By.CSS_SELECTOR`: Selectores CSS
-- `By.XPATH`: Expresiones XPath
-- `By.TAG_NAME`: Búsqueda por etiqueta HTML
-- `By.NAME`: Búsqueda por atributo name
-
-### Interacciones
-- `click()`: Hacer clic en elementos
-- `send_keys()`: Ingresar texto
-- `text`: Obtener texto de elementos
-- `get_attribute()`: Obtener atributos
-
-### Esperas
-- `implicitly_wait()`: Espera implícita
-- `WebDriverWait()`: Espera explícita
-- `expected_conditions`: Condiciones de espera
-
-### Validaciones
-- `assert`: Aserciones para pruebas
-- `len()`: Conteo de elementos
-- Operador `in`: Verificación de contenido
-
-### Scripts Personalizados
-- `execute_script()`: Ejecución de JavaScript
-- `scrollIntoView()`: Desplazamiento a elementos
-
-## Uso
-
-Para ejecutar cualquier ejercicio:
+### ▶️ Cómo Ejecutar
 
 ```bash
-python nombre_del_archivo.py
+# Instalar dependencias
+pip install selenium
+
+# Ejecutar cualquier ejercicio
+python find_element_exercise_1.py
 ```
 
-## Notas Importantes
+> ⚠️ Requiere Chrome instalado y una versión compatible de ChromeDriver.
 
-- Todos los ejercicios incluyen tiempos de espera adecuados
-- Las credenciales usadas son de prueba y pueden ser reemplazadas
-- Los ejercicios están diseñados para ejecutarse secuencialmente
-- Cada archivo es independiente y puede ejecutarse por separado
+---
 
-## Mejores Prácticas Implementadas
+## 📁 Estructura del Proyecto
 
-1. **Manejo de esperas**: Uso adecuado de esperas implícitas y explícitas
-2. **Validaciones**: Verificación de resultados con `assert`
-3. **Limpieza**: Cierre adecuado del navegador con `driver.quit()`
-4. **Selectores robustos**: Uso de selectores específicos y confiables
-5. **Manejo de errores**: Mensajes descriptivos en las validaciones
+```
+python-qa-lab/
+├── README.md
+├── open_and_close_page.py
+├── connect_selenium_in_pycharm.py
+├── find_element_exercise_1.py
+├── find_element_exercise_2.py
+├── find_element_exercise_3.py
+├── click_on_an_element.py
+├── filling_in_the_input_field.py
+├── get_text.py
+├── go_to_element.py
+├── practice_exercise_1.py
+├── practice_exercise_2.py
+└── practice_exercise_3.py
+```
